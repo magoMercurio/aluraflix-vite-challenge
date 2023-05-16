@@ -51,8 +51,8 @@ const GlobalStyle = createGlobalStyle`
   --color-black-lighter: #9E9E9E;
   //COLOR CURSOS
   --color-frontend: #6bd1ff;
-  --color-infra: #9cd33b;
   --color-backend: #00c86f;
+  --color-infra: #9cd33b;
   --color-mobile: #ffba05;
   --color-marketing: #6b5be2;
   --color-inovation: #ff8c2a;
