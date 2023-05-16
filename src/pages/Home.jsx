@@ -1,13 +1,13 @@
 import styled from "styled-components"
 import Hero from "../components/Hero"
-import Header from "../components/Header"
+import { HeaderHome } from "../components/Header"
 
 
 const Home = () => {
 
   return (
     <>
-      <Header />
+      <HeaderHome />
       <Hero />
     </>
   

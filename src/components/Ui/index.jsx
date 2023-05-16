@@ -9,6 +9,16 @@ export const IconoTema = styled(Icono)`
   filter: ${({ theme }) => theme.filter}
 `
 
+export const LogoMain = styled.img`
+  width: 168px;
+  height: 40px;
+`
+
+export const LogoFooter = styled.img`
+  width: 252px;
+  height: 60px;
+`
+
 export const Btn = styled.button`
   margin: 15px auto 0px auto;
   display: block;

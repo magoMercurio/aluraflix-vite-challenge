@@ -1,10 +1,12 @@
 import React from 'react'
 import styled from "styled-components"
 import { Link } from 'react-router-dom'
-
+import { LogoMain } from '../Ui'
+import logo from '../../../public/img/logo.png'
 
 
 const HeaderSection = styled.div`
+height: 94px;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -34,18 +36,25 @@ const BtnHeader = styled(Link)`
   
 `
 
-const Header = () => {
+export const HeaderHome = () => {
 
   return (
     <HeaderSection>
       <Link to="/">
-        <img src="../../../public/img/logo.png" alt="logo" />
+        <LogoMain src={ logo } alt="logo" />
       </Link>
-
         <BtnHeader to="/NuevoVideo">Nuevo Video</BtnHeader>
-  
     </HeaderSection>
   )
 }
 
-export default Header
+export const HeaderGeneric = () => {
+
+  return (
+    <HeaderSection>
+      <Link to="/">
+        <LogoMain src={ logo } alt="logo" />
+      </Link>
+    </HeaderSection>
+  )
+}

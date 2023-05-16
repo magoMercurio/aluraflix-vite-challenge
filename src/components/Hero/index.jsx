@@ -12,6 +12,22 @@ const HeroSection = styled.section`
   background-position: center;
   background-size: cover;
 `
+const HeroContainer = styled.div`
+  display: flex;
+  flex-direction: row;
+`
+
+const ContainerDescription = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+`
+
+const ContainerVideo = styled.div`
+  display: flex;
+  justify-content: center;
+`
 
 const BtnFrontEnd = styled.a`
   box-sizing: border-box;
@@ -55,11 +71,18 @@ const Hero = () => {
   
   return (
     <HeroSection className="hero" id='frontend'>
-      <BtnFrontEnd href="#frontend">Front-End</BtnFrontEnd>
-      <TitleMedium>Challenge React</TitleMedium>
-      <BodyMedium>
-      Este challenge es una forma de aprendizaje. Es un mecanismo donde podrás comprometerte en la resolución de un problema para poder aplicar todos los conocimientos adquiridos en la formación React.
-      </BodyMedium>
+      <HeroContainer>
+        <ContainerDescription>
+          <BtnFrontEnd href="#frontend">Front-End</BtnFrontEnd>
+          <TitleMedium>Challenge React</TitleMedium>
+          <BodyMedium>
+          Este challenge es una forma de aprendizaje. Es un mecanismo donde podrás comprometerte en la resolución de un problema para poder aplicar todos los conocimientos adquiridos en la formación React.
+          </BodyMedium>
+        </ContainerDescription>
+        <ContainerVideo>
+          <h1>aqui va un video</h1>
+        </ContainerVideo>
+      </HeroContainer>
     </HeroSection>
     
   )
