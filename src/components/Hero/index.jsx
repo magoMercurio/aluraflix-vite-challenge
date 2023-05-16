@@ -1,3 +1,4 @@
+// eslint-disable-next-line no-unused-vars
 import React from 'react'
 import styled from 'styled-components'
 
@@ -15,6 +16,7 @@ const HeroSection = styled.section`
 const HeroContainer = styled.div`
   display: flex;
   flex-direction: row;
+  justify-content: space-between;
 `
 
 const ContainerDescription = styled.div`
@@ -22,30 +24,33 @@ const ContainerDescription = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
+  margin-left: 28px;
 `
 
 const ContainerVideo = styled.div`
   display: flex;
   justify-content: center;
+  align-items: center;
 `
 
 const BtnFrontEnd = styled.a`
   box-sizing: border-box;
-  width: 180px;
-  height: 54px;
-  background-color: var(--color-black-dark);
-  color: #ffffff;
-  border: 1px solid var(--color-gray-light);
+  width: 296px;
+  height: 92px;
+  background-color: var(--color-frontend);
+  color: var(--color-gray-light);
+  border: 4px solid #6BD1FF;
   border-radius: 4px;
   font-family: var(--font-family);
   font-style: normal;
-  font-weight: 600;
-  font-size: 21px;
+  font-weight: var(--font-weight-400);
+  font-size: var(--font-size-title-big);
   line-height: 24px;
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
+  margin-bottom: 40px;
   
 `
 
@@ -55,6 +60,7 @@ color: var(--font-color);
   font-size: var(--font-size-title-medium);
   font-weight: var(--font-weight-400);
   font-style: normal;
+  margin-bottom: 9px;
 `
 const BodyMedium = styled.p`
   max-width: 661px;

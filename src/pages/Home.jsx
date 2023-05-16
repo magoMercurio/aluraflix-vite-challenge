@@ -1,4 +1,4 @@
-import styled from "styled-components"
+
 import Hero from "../components/Hero"
 import { HeaderHome } from "../components/Header"
 
@@ -9,6 +9,7 @@ const Home = () => {
     <>
       <HeaderHome />
       <Hero />
+
     </>
   
   )
