@@ -45,3 +45,7 @@ table {
 }
 
 /*  END RESET CSS */
+body {
+	background-color: rgba(0, 0, 0, 0.9);
+	color: #f5f5f5
+}

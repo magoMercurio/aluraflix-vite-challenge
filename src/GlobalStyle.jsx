@@ -7,10 +7,11 @@ const GlobalStyle = createGlobalStyle`
   margin: 0;
   padding: 0;
   text-decoration: none;
+  
 
 }
 :root {
-  --font-family: "Montserrat", sans-serif;
+  --font-family: 'Roboto', sans-serif;
 
   --font-size-title-big: 60px;
   --font-size-title-medium: 46px;

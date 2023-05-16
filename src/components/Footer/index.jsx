@@ -8,12 +8,11 @@ const FooterContainer = styled.footer`
   justify-content: center;
   align-items: center;
   height: 143px;
-  background-color: var(--color-black-dark);
+
 
 `
 
 const Coyright = styled.p`
-  color: var(--color-gray-light);
   font-size: var(--font-size-body-smaller);
 `
 

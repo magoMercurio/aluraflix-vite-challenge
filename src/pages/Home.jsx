@@ -1,6 +1,7 @@
 
 import Hero from "../components/Hero"
 import { HeaderHome } from "../components/Header"
+import Carrusel from "../components/Carrusel/Carrusel"
 
 
 const Home = () => {
@@ -9,6 +10,7 @@ const Home = () => {
     <>
       <HeaderHome />
       <Hero />
+      <Carrusel />
 
     </>
   
