@@ -8,7 +8,7 @@ import {v4 as uuidv4 } from 'uuid'
 
 const Home = () => {
 
-  const [categorias, setcategorias] = useState([
+  const [secciones, setSecciones] = useState([
     {
       id: uuidv4(),
       "categoria": "Front End",
@@ -30,6 +30,54 @@ const Home = () => {
 
   ]);
 
+  const [categorias, setCategorias] = useState([
+    {
+      id: uuidv4(),
+      titulo: "Front End",
+      colorCategoria: "#6bd1ff",
+    },
+    {
+      id: uuidv4(),
+      titulo: "Back End",
+      colorCategoria: "#00c86f",
+    },
+    {
+      id: uuidv4(),
+      titulo: "Inovacion y Gestión",
+      colorCategoria: "#ff8c2a",
+    },
+    {
+      id: uuidv4(),
+      titulo: "Infraestructura",
+      colorCategoria: "#9cd33b",
+    },
+    {
+      id: uuidv4(),
+      titulo: "mobile",
+      colorCategoria: "#ffba05",
+    },
+    {
+      id: uuidv4(),
+      titulo: "marketing",
+      colorCategoria: "#9cd33b",
+    },
+    {
+      id: uuidv4(),
+      titulo: "inovacion",
+      colorCategoria: "#ff8c2a",
+    },
+    {
+      id: uuidv4(),
+      titulo: "UX",
+      colorCategoria: "#dc6ebe",
+    },
+    {
+      id: uuidv4(),
+      titulo: "Data Science",
+      colorCategoria: "#9cd33b",
+    },
+  ]);
+
 
   return (
     <>
@@ -39,7 +87,8 @@ const Home = () => {
         categorias.map( (categoria) => {
           return <Carrusel
             datos={categoria}
-            key={categoria.categoria}
+            key={categoria.titulo}
+            secciones={secciones.filter( seccion => seccion.categoria === categoria.titulo )}
             />
         })
       }

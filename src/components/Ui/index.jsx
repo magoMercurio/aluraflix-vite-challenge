@@ -1,3 +1,4 @@
+import React from "react";
 import styled from "styled-components";
 
 export const Icono = styled.img`
@@ -31,3 +32,4 @@ export const Btn = styled.button`
   padding: 8px 20px;
   cursor: pointer;
 `
+
