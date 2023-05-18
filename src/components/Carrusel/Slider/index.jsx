@@ -10,7 +10,7 @@ import styled from 'styled-components';
 
 const Slider = (props) => {
 
-  const { id, categoria, descripcion } = props.datos
+  const { categoria, descripcion } = props.datos
   const { colorCategoria } = props
 
   const bgc = {

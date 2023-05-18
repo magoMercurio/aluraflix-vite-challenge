@@ -1,5 +1,4 @@
-import React from 'react';
-import styled from 'styled-components';
+
 import Slider from '../Slider'
 
 
@@ -10,8 +9,6 @@ const Carrusel = (props) => {
 
   return (
     <>
-    <div className="carrusel">
-      
       {
         secciones.map((seccion, index) =>
           <Slider 
@@ -21,13 +18,6 @@ const Carrusel = (props) => {
             colorCategoria={colorCategoria}
           />
         )}
-
-    {/*   <TitleContainer>
-        <TitleCategoria>{ titulo }</TitleCategoria>
-        <DescriptionCategoria>descripcion</DescriptionCategoria>
-      </TitleContainer>
-      <Slider  /> */}
-    </div>
     </>
   )
 }
