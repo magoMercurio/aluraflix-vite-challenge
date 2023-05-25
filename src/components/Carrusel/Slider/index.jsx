@@ -2,8 +2,7 @@
 import React from 'react';
 import VideoCard from '../VideoCard';
 import styled from 'styled-components';
-import { Abtn } from '../../Ui/'
-
+import { Abtn, Parrafo } from '../../Ui/'
 
 
 const TitleContainer = styled.div`
@@ -17,34 +16,26 @@ gap: 11px;
 const TitleCategoria = styled(Abtn)`
 
 `
-const DescriptionCategoria = styled.p`
-display: flex;
-align-items: center;
-justify-content: center;
-text-align: center;
-font-family: var(--font-family);
-font-style: normal;
-font-weight: var(--font-weight-300);
-font-size: var(--font-size-body-medium);
-line-height: var(--line-height-body-medium);
+const DescriptionCategoria = styled(Parrafo)`
+
 `
-
-
 
 const Slider = (props) => {
 
   const { categoria, descripcion } = props.datos
-  const { seccion, colorCategoria } = props
+  const { colorCategoria } = props
 
-  const bg = {
-    background: colorCategoria
+  const bgc = {
+    background: colorCategoria,
+    border: colorCategoria
   }
 
 
   return (
     <div className="slider">
       <TitleContainer>
-        <TitleCategoria style={ bg } >{ categoria }</TitleCategoria>
+        <TitleCategoria
+        style={ bgc}>{ categoria }</TitleCategoria>
         <DescriptionCategoria>{ descripcion }</DescriptionCategoria>
       </TitleContainer>
       <VideoCard />

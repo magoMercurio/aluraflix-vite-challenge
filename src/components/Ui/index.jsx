@@ -1,4 +1,3 @@
-import React from "react";
 import styled from "styled-components";
 
 export const Icono = styled.img`
@@ -51,4 +50,16 @@ text-align: center;
 padding: 4px 8px;
 background-color: var(--color-frontend);
 border: 2px solid var(--color-frontend);
+`
+
+export const Parrafo = styled.p`
+display: flex;
+align-items: center;
+justify-content: center;
+text-align: center;
+font-family: var(--font-family);
+font-style: normal;
+font-weight: var(--font-weight-300);
+font-size: var(--font-size-body-medium);
+line-height: var(--line-height-body-medium);
 `
