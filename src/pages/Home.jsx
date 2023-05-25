@@ -6,7 +6,7 @@ import {v4 as uuidv4 } from 'uuid'
 
 
 
-const Home = () => {
+const Home = (props) => {
 
   const [secciones, setSecciones] = useState([
     {
@@ -77,6 +77,8 @@ const Home = () => {
       colorCategoria: "#9cd33b",
     },
   ]);
+
+  
   return (
     <>
       <HeaderHome />
