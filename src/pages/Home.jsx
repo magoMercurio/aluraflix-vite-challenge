@@ -77,8 +77,6 @@ const Home = () => {
       colorCategoria: "#9cd33b",
     },
   ]);
-
-
   return (
     <>
       <HeaderHome />
@@ -92,10 +90,7 @@ const Home = () => {
             />
         })
       }
-      
-
     </>
-  
   )
 }
 
