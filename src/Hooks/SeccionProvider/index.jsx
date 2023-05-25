@@ -86,10 +86,20 @@ export const SeccionProvider = ({ children }) => {
   ]);
 
   return (
-    <seccionContext.Provider value={{ secciones, setSecciones }}>
-      <categoriaContext.Provider value={{ categorias, setCategorias }}>
+    <seccionContext.Provider value={{ secciones}}>
+      <categoriaContext.Provider value={{ categorias}}>
         {children}
       </categoriaContext.Provider>
     </seccionContext.Provider>
   )
+}
+
+{
+  categorias.map( (categoria) => {
+    return <Carrusel
+      datos={categoria}
+      key={categoria.titulo}
+      secciones={secciones.filter( seccion => seccion.categoria === categoria.titulo )}
+      />
+    })
 }

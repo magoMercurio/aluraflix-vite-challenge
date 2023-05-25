@@ -5,6 +5,8 @@ import GlobalStyle from './GlobalStyle'
 import Home from './pages/Home';
 import NuevoVideo from './pages/NuevoVideo';
 import Footer from './components/Footer';
+import { SeccionProvider } from './Hooks/SeccionProvider';
+
 
 
 function App() {
@@ -12,6 +14,7 @@ function App() {
 
   return (
     <Router>
+      <SeccionProvider>
       <GlobalStyle />
       <Routes>
         <Route
@@ -24,6 +27,7 @@ function App() {
         />
       </Routes>
       <Footer />
+    </SeccionProvider>
     </Router>
   )
 }

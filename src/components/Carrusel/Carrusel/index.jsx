@@ -1,21 +1,25 @@
 import React from 'react'
 import Slider from '../Slider'
+import { useSeccionContext, useCategoriaContext, SeccionProvider } from '../../../Hooks/SeccionProvider'
 
 
-const Carrusel = (props) => {
+const Carrusel = () => {
+  
+  const secciones = () => useSeccionContext;
+  
+  const categorias = useCategoriaContext()
 
-  const { id, colorCategoria } = props.datos
-  const { secciones } = props
+
 
   return (
     <>
       {
         secciones.map((seccion, index) =>
           <Slider 
-            id={id} 
+            id={secciones.id} 
             datos={seccion} 
             key={index}
-            colorCategoria={colorCategoria}
+            colorCategoria={categorias.colorCategoria}
           />
         )}
     </>
