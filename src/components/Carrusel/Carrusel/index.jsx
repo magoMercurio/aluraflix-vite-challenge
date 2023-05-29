@@ -1,6 +1,6 @@
 // eslint-disable-next-line no-unused-vars
 import React from 'react'
-import Slider from '../Slider'
+import SliderCarrusel from '../SliderCarrusel'
 
 
 const Carrusel = (props) => {
@@ -12,7 +12,7 @@ const Carrusel = (props) => {
     <>
       {
         secciones.map((seccion, index) =>
-          <Slider 
+          <SliderCarrusel 
             id={id} 
             datos={seccion} 
             key={index}

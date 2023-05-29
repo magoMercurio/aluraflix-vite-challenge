@@ -36,26 +36,31 @@ const Home = () => {
       id: uuidv4(),
       titulo: "Front End",
       colorCategoria: "#6bd1ff",
+      descripcion: "",
     },
     {
       id: uuidv4(),
       titulo: "Back End",
       colorCategoria: "#00c86f",
+      descripcion: "",
     },
     {
       id: uuidv4(),
       titulo: "Inovacion y Gestión",
       colorCategoria: "#ff8c2a",
+      descripcion: "",
     },
     {
       id: uuidv4(),
       titulo: "Infraestructura",
       colorCategoria: "#9cd33b",
+      descripcion: "",
     },
     {
       id: uuidv4(),
       titulo: "mobile",
       colorCategoria: "#ffba05",
+      descripcion: "",
     },
     {
       id: uuidv4(),
@@ -71,11 +76,13 @@ const Home = () => {
       id: uuidv4(),
       titulo: "UX",
       colorCategoria: "#dc6ebe",
+      descripcion: "",
     },
     {
       id: uuidv4(),
       titulo: "Data Science",
       colorCategoria: "#9cd33b",
+      descripcion: "",
     },
   ]);
 

@@ -2,7 +2,7 @@
 import React from 'react';
 import VideoCard from '../VideoCard';
 import styled from 'styled-components';
-import { Abtn, Parrafo } from '../../Ui/'
+import { Abtn, Parrafo } from '../../Ui'
 
 
 const TitleContainer = styled.div`
@@ -20,7 +20,7 @@ const DescriptionCategoria = styled(Parrafo)`
 
 `
 
-const Slider = (props) => {
+const SliderCarrusel = (props) => {
 
   const { categoria, descripcion } = props.datos
   const { colorCategoria } = props
@@ -43,4 +43,4 @@ const Slider = (props) => {
   )
 }
 
-export default Slider;
+export default SliderCarrusel

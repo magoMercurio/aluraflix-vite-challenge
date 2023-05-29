@@ -9,4 +9,4 @@ const VideoCard = () => {
   );
 }
 
-export default VideoCard;
+export default VideoCard
