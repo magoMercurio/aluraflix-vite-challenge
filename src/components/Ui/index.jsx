@@ -63,3 +63,15 @@ font-weight: var(--font-weight-300);
 font-size: var(--font-size-body-medium);
 line-height: var(--line-height-body-medium);
 `
+export const TitleBig = styled.h2`
+  font-family: var(--font-family);
+  font-style: normal;
+  font-weight: var(--font-weight-400);
+  font-size: var(--font-size-title-big);
+  line-height: var(--line-height-title-big);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 4px 8px;
+`
