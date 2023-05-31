@@ -113,7 +113,10 @@ function App() {
         />
         <Route
             path='/nuevovideo'
-            element={<NuevoVideo/>}
+            element={<NuevoVideo
+              categorias={categorias}
+              key={categorias.titulo}
+              />}
         />
       </Routes>
       <Footer />
