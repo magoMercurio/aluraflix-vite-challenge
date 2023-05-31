@@ -4,6 +4,7 @@ import styled from 'styled-components'
 import { TextField, MenuItem, Box, Button } from '@mui/material'
 import { TitleBig  } from '../components/Ui'
 import { Abtn } from '../components/Ui'
+import { useNavigate } from 'react-router-dom'
 
 
 const TextFieldStyled = styled(TextField)`
@@ -20,10 +21,11 @@ const BtnContainer = styled.div`
 `
 
 const BtnNuevaCategoria = styled(Abtn)`
-width: 89.5px;
-height: 36px;
-border-radius: 4px;
-font-size: 14px;
+  width: 89.5px;
+  height: 36px;
+  font-size: 14px;
+
+
 `
 
 
@@ -131,10 +133,10 @@ const NuevoVideo = ({ categorias }) => {
               Limpiar
             </Button>
             
-              <BtnNuevaCategoria
+              <Button link to
                 >
                 Nueva Categoria
-              </BtnNuevaCategoria>
+              </Button>
             
           </BtnContainer>
           
