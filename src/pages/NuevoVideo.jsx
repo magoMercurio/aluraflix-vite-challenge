@@ -1,10 +1,10 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { HeaderGeneric} from "../components/Header"
 import styled from 'styled-components'
 import { TextField, MenuItem, Box, Button } from '@mui/material'
 import { TitleBig  } from '../components/Ui'
 import { Abtn } from '../components/Ui'
-import { useNavigate } from 'react-router-dom'
+
 
 
 const TextFieldStyled = styled(TextField)`
@@ -14,24 +14,54 @@ const TextFieldStyled = styled(TextField)`
 `
 
 const BtnContainer = styled.div`
+width: 100%;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
+  margin-top: 50px;
 
 `
 
-const BtnNuevaCategoria = styled(Abtn)`
+/* const BtnNuevaCategoria = styled(Abtn)`
   width: 89.5px;
   height: 36px;
   font-size: 14px;
 
-
-`
-
+` */
 
 const NuevoVideo = ({ categorias }) => {
 
+  const [titulo, settitulo] = useState('')
+  const [link, setlink] = useState('')
+  const [linkImg, setlinkImg] = useState('')
+  const [categoria, setcategoria] = useState('')
+  const [descripcion, setdescripcion] = useState('')
+  const [codigoSeguridad, setcodigoSeguridad] = useState('')
 
+
+  const {registrarVideo } = props
+
+
+
+  const enviarForm = (e) => {
+    e.preventDefault()
+    const data = {
+      titulo,
+      link,
+      linkImg,
+      categoria,
+      descripcion
+    }
+    console.log(data)
+    
+  }
+
+  function validarCodigoSeguridad(codigoSeguridad) {
+    if (codigoSeguridad.length > 4) {
+      return true
+    }
+    return false
+  }
 
     return (
       <>
@@ -40,6 +70,7 @@ const NuevoVideo = ({ categorias }) => {
 
         <Box
           component="form"
+          onSubmit={enviarForm}
           autoComplete="off"
           sx={{
             display: "flex",
@@ -58,7 +89,8 @@ const NuevoVideo = ({ categorias }) => {
             margin='normal'
             required
             type='text'
-            
+            value={titulo}
+            onChange={(e) => settitulo(e.target.value)}
           />
           <TextFieldStyled
             
@@ -68,6 +100,8 @@ const NuevoVideo = ({ categorias }) => {
             margin='normal'
             required
             type='text'
+            value={link}
+            onChange={(e) => setlink(e.target.value)}
           />
           <TextFieldStyled
             
@@ -77,6 +111,8 @@ const NuevoVideo = ({ categorias }) => {
             margin='normal'
             required
             type='text'
+            value={linkImg}
+            onChange={(e) => setlinkImg(e.target.value)}
           />
           <TextFieldStyled
             
@@ -85,7 +121,10 @@ const NuevoVideo = ({ categorias }) => {
             fullWidth
             margin='normal'
             required
-            select        
+            select
+            defaultValue={''}
+            value={categoria}
+            onChange={(e) => setcategoria(e.target.value)}
             >
               {
               categorias.map((option) => (
@@ -104,6 +143,8 @@ const NuevoVideo = ({ categorias }) => {
             margin='normal'
             required
             type='text'
+            value={descripcion}
+            onChange={(e) => setdescripcion(e.target.value)}
           />
           <TextFieldStyled
             
@@ -113,35 +154,42 @@ const NuevoVideo = ({ categorias }) => {
             margin='normal'
             required
             type='password'
+            value={codigoSeguridad}
+            onChange={(e) => setcodigoSeguridad(e.target.value)}
+            error={!validarCodigoSeguridad(codigoSeguridad)}
           />
 
           <BtnContainer>
-            <Button
-              type="submit"
-              variant="contained" 
-              color="primary"
-              
-            >
-              Guardar
-            </Button>
-            <Button
-              type="reset"
-              variant="contained" 
-              color="primary" 
-              sx={{  marginLeft: "40px" }}
+            <div>
+              <Button
+                type="submit"
+                variant="contained" 
+                color="primary"
+                
               >
-              Limpiar
-            </Button>
-            
-              <Button link to
+                Guardar
+              </Button>
+              <Button
+                type="reset"
+                variant="contained" 
+                color="primary" 
+                sx={{  marginLeft: "40px" }}
+              >
+                Limpiar
+              </Button>
+            </div>
+            <div>
+              <Button
+                variant="contained"
+                href='/NuevaCategoria'
                 >
                 Nueva Categoria
               </Button>
-            
+            </div>
           </BtnContainer>
           
-         
-          </Box>
+
+        </Box>
 
       </>
     )

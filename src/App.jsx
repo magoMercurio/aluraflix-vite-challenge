@@ -6,6 +6,7 @@ import Carrusel from './components/Carrusel/Carrusel';
 import NuevoVideo from './pages/NuevoVideo';
 import Footer from './components/Footer';
 import {v4 as uuidv4 } from 'uuid'
+import NuevaCategoria from './pages/NuevaCategoria';
 
 
 
@@ -118,6 +119,10 @@ function App() {
               key={categorias.titulo}
               />}
         />
+        <Route
+            path='/NuevaCategoria'
+            element={<NuevaCategoria />}
+            />
       </Routes>
       <Footer />
     </Router>
