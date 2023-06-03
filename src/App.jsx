@@ -9,9 +9,6 @@ import {v4 as uuidv4 } from 'uuid'
 import NuevaCategoria from './pages/NuevaCategoria';
 
 
-
-
-
 function App() {
 
   const [secciones, setSecciones] = useState([
@@ -34,6 +31,92 @@ function App() {
       colorCategoria: '#ff8c2a',      
     },
 
+  ]);
+
+  const [videos, setVideos] = useState([
+    {
+      id: uuidv4(),
+      titulo: "Video 1",
+      link: "https://www.youtube.com/watch?v=H1aNTRK3YfU",
+      imagen: "https://i.ytimg.com/vi/7C2z4GqqS5E/maxresdefault.jpg",
+      categoria: "Front End",
+      descripcion: "Este es el video 1"
+
+    },
+    {
+      id: uuidv4(),
+      titulo: "Video 2",
+      link: "https://www.youtube.com/watch?v=H_s-xM6Ii1g",
+      imagen: "https://i.ytimg.com/vi/7C2z4GqqS5E/maxresdefault.jpg",
+      categoria: "Front End",
+      descripcion: "Este es el video 2"
+    },
+    {
+      id: uuidv4(),
+      titulo: "Video 3",
+      link: "https://www.youtube.com/watch?v=ESShhQmBjjY",
+      imagen: "https://i.ytimg.com/vi/7C2z4GqqS5E/maxresdefault.jpg",
+      categoria: "Front End",
+      descripcion: "Este es el video 3"
+    },
+    {
+      id: uuidv4(),
+      titulo: "Video 4",
+      link: "https://www.youtube.com/watch?v=tA-_vAz9y78&t=414s&pp=ygUSbmV4dCBqcyBlY29tbWVyY2Ug",
+      imagen: "https://i.ytimg.com/vi/7C2z4GqqS5E/maxresdefault.jpg",
+      categoria: "Front End",
+      descripcion: "Este es el video 4"
+    },
+    {
+      id: uuidv4(),
+      titulo: "Video 5",
+      link: "https://www.youtube.com/watch?v=QqiDandkcBY",
+      imagen: "https://i.ytimg.com/vi/7C2z4GqqS5E/maxresdefault.jpg",
+      categoria: "Front End",
+      descripcion: "Video para aprender a realizar apis con prisma y node js"
+    },
+
+    {
+      id: uuidv4(),
+      titulo: "Video 1",
+      link: "https://www.youtube.com/watch?v=J6qIzKxmW8Y",
+      imagen: "https://i.ytimg.com/vi/7C2z4GqqS5E/maxresdefault.jpg",
+      categoria: "Back End",
+      descripcion: "Este es el video 1"
+
+    },
+    {
+      id: uuidv4(),
+      titulo: "Video 2",
+      link: "https://www.youtube.com/watch?v=0R-fFbA737A",
+      imagen: "https://i.ytimg.com/vi/7C2z4GqqS5E/maxresdefault.jpg",
+      categoria: "Back End",
+      descripcion: "Este es el video 2"
+    },
+    {
+      id: uuidv4(),
+      titulo: "Video 3",
+      link: "https://www.youtube.com/watch?v=aA2IRoPFIn0",
+      imagen: "https://i.ytimg.com/vi/7C2z4GqqS5E/maxresdefault.jpg",
+      categoria: "Back End",
+      descripcion: "Este es el video 3"
+    },
+    {
+      id: uuidv4(),
+      titulo: "Video 4",
+      link: "https://www.youtube.com/watch?v=SjYecEQFL0U",
+      imagen: "https://i.ytimg.com/vi/7C2z4GqqS5E/maxresdefault.jpg",
+      categoria: "Back End",
+      descripcion: "Este es el video 4"
+    },
+    {
+      id: uuidv4(),
+      titulo: "Weight of Love",
+      link: "https://www.youtube.com/watch?v=ygdVEIrVnIk",
+      imagen: "https://i.ytimg.com/vi/7C2z4GqqS5E/maxresdefault.jpg",
+      categoria: "Back End",
+      descripcion: "Mi tema favorito de The Black Keys"
+    },
   ]);
 
   const [categorias, setCategorias] = useState([
@@ -91,6 +174,15 @@ function App() {
     },
   ]);
 
+  //Registrar videos
+  const registrarVideo = (e) => {
+    setVideos([...videos, e]);
+  }
+
+  const actualizarCategorias = (nuevasCategorias) => {
+    setCategorias(nuevasCategorias);
+  }
+
   return (
     <Router>
       <GlobalStyle />
@@ -106,6 +198,7 @@ function App() {
                     datos={categoria}
                     key={categoria.titulo}
                     secciones={secciones.filter( seccion => seccion.categoria === categoria.titulo )}
+                    videos={videos.filter( video => video.categoria === categoria.titulo )}
                   />
                 })
               }
@@ -117,11 +210,15 @@ function App() {
             element={<NuevoVideo
               categorias={categorias}
               key={categorias.titulo}
+              registrarVideo={registrarVideo}
               />}
         />
         <Route
             path='/NuevaCategoria'
-            element={<NuevaCategoria />}
+            element={<NuevaCategoria
+              categorias={categorias}
+              actualizarCategorias={actualizarCategorias} 
+              />}
             />
       </Routes>
       <Footer />

@@ -35,7 +35,7 @@ const SliderCarrusel = (props) => {
     <div className="slider">
       <TitleContainer>
         <TitleCategoria
-        style={ bgc}>{ categoria }</TitleCategoria>
+        style={ bgc }>{ categoria }</TitleCategoria>
         <DescriptionCategoria>{ descripcion }</DescriptionCategoria>
       </TitleContainer>
       <VideoCard />

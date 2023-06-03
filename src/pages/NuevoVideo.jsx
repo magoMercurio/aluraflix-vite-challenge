@@ -1,10 +1,9 @@
+// eslint-disable-next-line no-unused-vars
 import React, { useState } from 'react'
 import { HeaderGeneric} from "../components/Header"
 import styled from 'styled-components'
 import { TextField, MenuItem, Box, Button } from '@mui/material'
 import { TitleBig  } from '../components/Ui'
-import { Abtn } from '../components/Ui'
-
 
 
 const TextFieldStyled = styled(TextField)`
@@ -22,14 +21,7 @@ width: 100%;
 
 `
 
-/* const BtnNuevaCategoria = styled(Abtn)`
-  width: 89.5px;
-  height: 36px;
-  font-size: 14px;
-
-` */
-
-const NuevoVideo = ({ categorias }) => {
+const NuevoVideo = ({ categorias, registrarVideo }) => {
 
   const [titulo, settitulo] = useState('')
   const [link, setlink] = useState('')
@@ -37,10 +29,6 @@ const NuevoVideo = ({ categorias }) => {
   const [categoria, setcategoria] = useState('')
   const [descripcion, setdescripcion] = useState('')
   const [codigoSeguridad, setcodigoSeguridad] = useState('')
-
-
-  const {registrarVideo } = props
-
 
 
   const enviarForm = (e) => {
@@ -52,8 +40,12 @@ const NuevoVideo = ({ categorias }) => {
       categoria,
       descripcion
     }
-    console.log(data)
-    
+    if (validarCodigoSeguridad(codigoSeguridad)) {
+      registrarVideo(data)
+      console.log(data)
+    } else {
+      console.log('No hacer nada')
+    }
   }
 
   function validarCodigoSeguridad(codigoSeguridad) {
@@ -61,6 +53,12 @@ const NuevoVideo = ({ categorias }) => {
       return true
     }
     return false
+  }
+
+  //Limpiar Boton
+  const refreshPage = () => {
+    window.location.reload(true)
+  
   }
 
     return (
@@ -91,6 +89,7 @@ const NuevoVideo = ({ categorias }) => {
             type='text'
             value={titulo}
             onChange={(e) => settitulo(e.target.value)}
+            
           />
           <TextFieldStyled
             
@@ -157,6 +156,7 @@ const NuevoVideo = ({ categorias }) => {
             value={codigoSeguridad}
             onChange={(e) => setcodigoSeguridad(e.target.value)}
             error={!validarCodigoSeguridad(codigoSeguridad)}
+            helperText={!validarCodigoSeguridad(codigoSeguridad) ? 'INGRESA PASSWORD de 4 digitos' : ''}
           />
 
           <BtnContainer>
@@ -165,7 +165,7 @@ const NuevoVideo = ({ categorias }) => {
                 type="submit"
                 variant="contained" 
                 color="primary"
-                
+
               >
                 Guardar
               </Button>
@@ -174,6 +174,7 @@ const NuevoVideo = ({ categorias }) => {
                 variant="contained" 
                 color="primary" 
                 sx={{  marginLeft: "40px" }}
+                onClick={refreshPage}
               >
                 Limpiar
               </Button>
