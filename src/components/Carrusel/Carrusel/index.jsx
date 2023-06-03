@@ -6,7 +6,7 @@ import SliderCarrusel from '../SliderCarrusel'
 const Carrusel = (props) => {
 
   const { id, colorCategoria } = props.datos
-  const { secciones } = props
+  const { secciones, videos } = props
 
   return (
     <>
@@ -17,6 +17,7 @@ const Carrusel = (props) => {
             datos={seccion} 
             key={index}
             colorCategoria={colorCategoria}
+            videos={videos}
           />
         )}
     </>

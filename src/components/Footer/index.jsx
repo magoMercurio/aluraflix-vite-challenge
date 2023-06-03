@@ -8,7 +8,8 @@ const FooterContainer = styled.footer`
   justify-content: center;
   align-items: center;
   height: 143px;
-
+  margin-top: 60px;
+  border-top: solid 2px var(--color-primary);
 
 `
 

@@ -23,11 +23,11 @@ width: 100%;
 
 const NuevoVideo = ({ categorias, registrarVideo }) => {
 
-  const [titulo, settitulo] = useState('')
-  const [link, setlink] = useState('')
-  const [linkImg, setlinkImg] = useState('')
+  const [titulo, setTitulo] = useState('')
+  const [link, setLink] = useState('')
+  const [linkImg, setLinkImg] = useState('')
   const [categoria, setcategoria] = useState('')
-  const [descripcion, setdescripcion] = useState('')
+  const [descripcion, setDescripcion] = useState('')
   const [codigoSeguridad, setcodigoSeguridad] = useState('')
 
 
@@ -88,7 +88,7 @@ const NuevoVideo = ({ categorias, registrarVideo }) => {
             required
             type='text'
             value={titulo}
-            onChange={(e) => settitulo(e.target.value)}
+            onChange={(e) => setTitulo(e.target.value)}
             
           />
           <TextFieldStyled
@@ -100,7 +100,7 @@ const NuevoVideo = ({ categorias, registrarVideo }) => {
             required
             type='text'
             value={link}
-            onChange={(e) => setlink(e.target.value)}
+            onChange={(e) => setLink(e.target.value)}
           />
           <TextFieldStyled
             
@@ -111,7 +111,7 @@ const NuevoVideo = ({ categorias, registrarVideo }) => {
             required
             type='text'
             value={linkImg}
-            onChange={(e) => setlinkImg(e.target.value)}
+            onChange={(e) => setLinkImg(e.target.value)}
           />
           <TextFieldStyled
             
@@ -143,7 +143,7 @@ const NuevoVideo = ({ categorias, registrarVideo }) => {
             required
             type='text'
             value={descripcion}
-            onChange={(e) => setdescripcion(e.target.value)}
+            onChange={(e) => setDescripcion(e.target.value)}
           />
           <TextFieldStyled
             
