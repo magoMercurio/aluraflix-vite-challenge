@@ -51,8 +51,8 @@ const NuevaCategoria = () => {
         margin='normal'
         required
         type='text'
-        /* value={titulo}
-        onChange={(e) => settitulo(e.target.value)} */
+        value={titulo}
+        onChange={(e) => setTitulo(e.target.value)}
           
       />
       <TextFieldStyled    
@@ -61,6 +61,7 @@ const NuevaCategoria = () => {
         fullWidth
         margin='normal'
         type='text'
+        value={descripcion}
       />
       <TextFieldStyled
         label='Color'
