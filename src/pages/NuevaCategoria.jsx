@@ -3,6 +3,7 @@ import React, { useState } from 'react'
 import { HeaderGeneric } from "../components/Header"
 import { Box, TextField, Button } from "@mui/material"
 import styled from 'styled-components'
+import TablaCategoria from '../components/TablaCategorias'
 
 
 const TextFieldStyled = styled(TextField)`
@@ -16,10 +17,13 @@ display: flex;
 justify-content: space-between;
 align-items: center;
 margin-top: 50px;
+margin-bottom: 30px;
 
 `
 
-const NuevaCategoria = () => {
+const NuevaCategoria = (props) => {
+
+  const { categorias } = props
 
   const [titulo, setTitulo] = useState('')
   const [descripcion, setDescripcion] = useState('')
@@ -74,6 +78,7 @@ const NuevaCategoria = () => {
         margin='normal'
         type='text'
         value={descripcion}
+        onChange={(e) => setDescripcion(e.target.value)}
       />
       <TextFieldStyled
         label='Color'
@@ -82,6 +87,8 @@ const NuevaCategoria = () => {
         margin='normal'
         type='color'
         required
+        value={color}
+        onChange={(e) => setColor(e.target.value)}
       />
       <TextFieldStyled
         label='Codigo de seguridad'
@@ -116,6 +123,12 @@ const NuevaCategoria = () => {
               </Button>
             </div>
           </BtnContainer>
+
+          <TablaCategoria
+            categorias={categorias}
+            
+          
+          />
 
 
 

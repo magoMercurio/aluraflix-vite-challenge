@@ -1,3 +1,4 @@
+// eslint-disable-next-line no-unused-vars
 import React, { useState } from 'react'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import GlobalStyle from './GlobalStyle'
@@ -217,6 +218,7 @@ function App() {
             path='/NuevaCategoria'
             element={<NuevaCategoria
               categorias={categorias}
+              key={categorias.titulo}
               actualizarCategorias={actualizarCategorias} 
               />}
             />

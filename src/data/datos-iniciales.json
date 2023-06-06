@@ -1,0 +1,56 @@
+{
+  "categorias": [
+    {
+      "id": "uuid1",
+      "titulo": "Front End",
+      "colorCategoria": "#6bd1ff",
+      "descripcion": ""
+    },
+    {
+      "id": "uuid2",
+      "titulo": "Back End",
+      "colorCategoria": "#00c86f",
+      "descripcion": ""
+    },
+    {
+      "id": "uuid3",
+      "titulo": "Inovacion y Gestión",
+      "colorCategoria": "#ff8c2a",
+      "descripcion": ""
+    },
+    {
+      "id": "uuid4",
+      "titulo": "Infraestructura",
+      "colorCategoria": "#9cd33b",
+      "descripcion": ""
+    },
+    {
+      "id": "uuid5",
+      "titulo": "mobile",
+      "colorCategoria": "#ffba05",
+      "descripcion": ""
+    },
+    {
+      "id": "uuid6",
+      "titulo": "marketing",
+      "colorCategoria": "#9cd33b"
+    },
+    {
+      "id": "uuid7",
+      "titulo": "inovacion",
+      "colorCategoria": "#ff8c2a"
+    },
+    {
+      "id": "uuid8",
+      "titulo": "UX",
+      "colorCategoria": "#dc6ebe",
+      "descripcion": ""
+    },
+    {
+      "id": "uuid9",
+      "titulo": "Data Science",
+      "colorCategoria": "#9cd33b",
+      "descripcion": ""
+    }
+  ]
+}
