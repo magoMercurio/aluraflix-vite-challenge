@@ -14,12 +14,12 @@ export default function TablaCategoria(props) {
 
   const { categorias } = props
 
-  function createData(titulo, descripcion, editar, remover) {
-    return { titulo, descripcion, editar, remover };
-  } 
-  
-  
-  const rows = categorias.map(categoria => createData(categoria.titulo, categoria.descripcion, 'editar', 'remover'));
+  const rows = categorias.map(categoria => ({
+    titulo: categoria.titulo,
+    descripcion: categoria.descripcion,
+    editar: 'editar',
+    remover: 'remover'
+  }))
 
 
   return (
