@@ -1,15 +1,23 @@
 // eslint-disable-next-line no-unused-vars
 import React, { useState } from 'react'
 import { HeaderGeneric } from "../components/Header"
-import { Box, TextField } from "@mui/material"
+import { Box, TextField, Button } from "@mui/material"
 import styled from 'styled-components'
 
 
 const TextFieldStyled = styled(TextField)`
   color: #f5f5f5f5;
   background-color: #53585D;
-  `
+`
 
+const BtnContainer = styled.div`
+width: 100%;
+display: flex;
+justify-content: space-between;
+align-items: center;
+margin-top: 50px;
+
+`
 
 const NuevaCategoria = () => {
 
@@ -27,6 +35,10 @@ const NuevaCategoria = () => {
     return false
   }
 
+    //Limpiar Boton
+    const refreshPage = () => {
+      window.location.reload(true)
+    }
   
   return (
     <>
@@ -82,7 +94,28 @@ const NuevaCategoria = () => {
         onChange={(e) => setcodigoSeguridad(e.target.value)}
         error={!validarCodigoSeguridad(codigoSeguridad)}
         helperText={!validarCodigoSeguridad(codigoSeguridad) ? 'INGRESA PASSWORD de 4 digitos' : ''}
-          />
+      />
+      <BtnContainer>
+            <div>
+              <Button
+                type="submit"
+                variant="contained" 
+                color="primary"
+
+              >
+                Guardar
+              </Button>
+              <Button
+                type="reset"
+                variant="contained" 
+                color="primary" 
+                sx={{  marginLeft: "40px" }}
+                onClick={refreshPage}
+              >
+                Limpiar
+              </Button>
+            </div>
+          </BtnContainer>
 
 
 
