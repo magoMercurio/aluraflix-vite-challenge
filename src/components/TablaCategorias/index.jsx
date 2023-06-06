@@ -12,7 +12,7 @@ import Paper from '@mui/material/Paper';
 
 export default function TablaCategoria(props) {
 
-  const { titulo, descripcion, categorias  } = props
+  const { categorias } = props
 
   function createData(titulo, descripcion, editar, remover) {
     return { titulo, descripcion, editar, remover };
