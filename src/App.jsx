@@ -125,59 +125,66 @@ function App() {
       id: uuidv4(),
       titulo: "Front End",
       colorCategoria: "#6bd1ff",
-      descripcion: "",
+      descripcion: "Formación Front End de Alura Latam",
     },
     {
       id: uuidv4(),
       titulo: "Back End",
       colorCategoria: "#00c86f",
-      descripcion: "",
+      descripcion: "Formación Back End de Alura Latam",
     },
     {
       id: uuidv4(),
       titulo: "Inovacion y Gestión",
       colorCategoria: "#ff8c2a",
-      descripcion: "",
+      descripcion: "Formación Innovación y Gestión de Alura Latam",
     },
     {
       id: uuidv4(),
       titulo: "Infraestructura",
       colorCategoria: "#9cd33b",
-      descripcion: "",
+      descripcion: "Formación Infraestructura de Alura Latam",
     },
     {
       id: uuidv4(),
       titulo: "mobile",
       colorCategoria: "#ffba05",
-      descripcion: "",
+      descripcion: "Formación Mobile de Alura Latam",
     },
     {
       id: uuidv4(),
       titulo: "marketing",
       colorCategoria: "#9cd33b",
+      descripcion: "Formación Marketing de Alura Latam",
     },
     {
       id: uuidv4(),
       titulo: "inovacion",
       colorCategoria: "#ff8c2a",
+      descripcion: "Formación Inovación de Alura Latam",
     },
     {
       id: uuidv4(),
       titulo: "UX",
       colorCategoria: "#dc6ebe",
-      descripcion: "",
+      descripcion: "Formación UX de Alura Latam",
     },
     {
       id: uuidv4(),
       titulo: "Data Science",
       colorCategoria: "#9cd33b",
-      descripcion: "",
+      descripcion: "Formación Data Science de Alura Latam",
     },
   ]);
 
   //Registrar videos
   const registrarVideo = (e) => {
     setVideos([...videos, e]);
+  }
+
+  //Registrar categorias
+  const registrarCategoria = (e) => {
+    setCategorias([...categorias, e]);
   }
 
   const actualizarCategorias = (nuevasCategorias) => {
@@ -219,6 +226,7 @@ function App() {
             element={<NuevaCategoria
               categorias={categorias}
               key={categorias.titulo}
+              registrarCategoria={registrarCategoria}
               actualizarCategorias={actualizarCategorias} 
               />}
             />

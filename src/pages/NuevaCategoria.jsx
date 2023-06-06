@@ -1,6 +1,6 @@
 // eslint-disable-next-line no-unused-vars
 import React, { useState } from 'react'
-import { HeaderGeneric } from "../components/Header"
+import { HeaderHome } from "../components/Header"
 import { Box, TextField, Button } from "@mui/material"
 import styled from 'styled-components'
 import TablaCategoria from '../components/TablaCategorias'
@@ -9,6 +9,7 @@ import TablaCategoria from '../components/TablaCategorias'
 const TextFieldStyled = styled(TextField)`
   color: #f5f5f5f5;
   background-color: #53585D;
+
 `
 
 const BtnContainer = styled.div`
@@ -23,14 +24,44 @@ margin-bottom: 30px;
 
 const NuevaCategoria = (props) => {
 
-  const { categorias } = props
+  const { categorias, registrarCategoria } = props
 
   const [titulo, setTitulo] = useState('')
   const [descripcion, setDescripcion] = useState('')
-  const [color, setColor] = useState('')
+  const [color, setColor] = useState( '#ffffff')
   const [codigoSeguridad, setcodigoSeguridad] = useState('')
 
+  const enviarForm = (e) => {
+    e.preventDefault()
+    const data = {
+      titulo,
+      descripcion,
+      color,
+    }
 
+    if (validarCodigoSeguridad(codigoSeguridad)) {
+      registrarCategoria(data)
+      console.log(data)
+    } else {
+      console.log('No hacer nada')
+    }
+  }
+
+
+    /* fetch('http://localhost:3000/api/categorias', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(data)
+    })
+      .then(res => res.json())
+      .then(data => {
+        console.log(data)
+        refreshPage()
+      })
+      .catch(err => console.log(err)) */
+  
 
   function validarCodigoSeguridad(codigoSeguridad) {
     if (codigoSeguridad.length > 4) {
@@ -46,10 +77,10 @@ const NuevaCategoria = (props) => {
   
   return (
     <>
-      <HeaderGeneric />
+      <HeaderHome />
       <Box
         component="form"
-        /* onSubmit={enviarForm} */
+        onSubmit={enviarForm}
         autoComplete="off"
         sx={{
           display: "flex",
