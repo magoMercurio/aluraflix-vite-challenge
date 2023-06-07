@@ -28,7 +28,7 @@ const NuevaCategoria = (props) => {
 
   const [titulo, setTitulo] = useState('')
   const [descripcion, setDescripcion] = useState('')
-  const [color, setColor] = useState( '#ffffff')
+  const [colorCategoria, setColorCategoria] = useState( '#ffffff')
   const [codigoSeguridad, setcodigoSeguridad] = useState('')
 
   const enviarForm = (e) => {
@@ -36,12 +36,16 @@ const NuevaCategoria = (props) => {
     const data = {
       titulo,
       descripcion,
-      color,
+      colorCategoria,
     }
 
     if (validarCodigoSeguridad(codigoSeguridad)) {
       registrarCategoria(data)
       console.log(data)
+      setTitulo('')
+      setDescripcion('')
+      setColorCategoria('#ffffff')
+      
     } else {
       console.log('No hacer nada')
     }
@@ -72,7 +76,11 @@ const NuevaCategoria = (props) => {
 
     //Limpiar Boton
     const refreshPage = () => {
-      window.location.reload(true)
+      setTitulo('')
+      setDescripcion('')
+      setColorCategoria('#ffffff')
+      setcodigoSeguridad('')
+    
     }
   
   return (
@@ -118,8 +126,8 @@ const NuevaCategoria = (props) => {
         margin='normal'
         type='color'
         required
-        value={color}
-        onChange={(e) => setColor(e.target.value)}
+        value={colorCategoria}
+        onChange={(e) => setColorCategoria(e.target.value)}
       />
       <TextFieldStyled
         label='Codigo de seguridad'
