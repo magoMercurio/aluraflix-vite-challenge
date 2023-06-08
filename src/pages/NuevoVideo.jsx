@@ -4,6 +4,7 @@ import { HeaderGeneric} from "../components/Header"
 import styled from 'styled-components'
 import { TextField, MenuItem, Box, Button } from '@mui/material'
 import { TitleBig  } from '../components/Ui'
+import { Link } from 'react-router-dom'
 
 
 const TextFieldStyled = styled(TextField)`
@@ -186,12 +187,9 @@ const NuevoVideo = ({ categorias, registrarVideo }) => {
               </Button>
             </div>
             <div>
-              <Button
-                variant="contained"
-                href='/NuevaCategoria'
-                >
-                Nueva Categoria
-              </Button>
+              <Link to='/NuevaCategoria' className='Btn-NuevaCategoria'>
+                <Button variant='contained'>Nueva Categoria</Button> 
+              </Link>
             </div>
           </BtnContainer>
           
