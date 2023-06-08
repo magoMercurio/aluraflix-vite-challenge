@@ -17,10 +17,10 @@ function App() {
     {
       id: uuidv4(),
       titulo: "Video 1",
-      link: "https://www.youtube.com/watch?v=H1aNTRK3YfU",
+      link: "https://www.youtube.com/watch?v=2-6hEFsXMaU&ab_channel=Programaci%C3%B3nAccesible",
       imagen: "https://i.ytimg.com/vi/7C2z4GqqS5E/maxresdefault.jpg",
       categoria: "Front End",
-      descripcion: "Este es el video 1"
+      descripcion: ""
 
     },
     {
@@ -29,7 +29,7 @@ function App() {
       link: "https://www.youtube.com/watch?v=H_s-xM6Ii1g",
       imagen: "https://i.ytimg.com/vi/7C2z4GqqS5E/maxresdefault.jpg",
       categoria: "Front End",
-      descripcion: "Este es el video 2"
+      descripcion: ""
     },
     {
       id: uuidv4(),
@@ -37,7 +37,7 @@ function App() {
       link: "https://www.youtube.com/watch?v=ESShhQmBjjY",
       imagen: "https://i.ytimg.com/vi/7C2z4GqqS5E/maxresdefault.jpg",
       categoria: "Front End",
-      descripcion: "Este es el video 3"
+      descripcion: ""
     },
     {
       id: uuidv4(),
@@ -45,7 +45,7 @@ function App() {
       link: "https://www.youtube.com/watch?v=tA-_vAz9y78&t=414s&pp=ygUSbmV4dCBqcyBlY29tbWVyY2Ug",
       imagen: "https://i.ytimg.com/vi/7C2z4GqqS5E/maxresdefault.jpg",
       categoria: "Front End",
-      descripcion: "Este es el video 4"
+      descripcion: ""
     },
     {
       id: uuidv4(),
@@ -59,7 +59,7 @@ function App() {
     {
       id: uuidv4(),
       titulo: "Video 1",
-      link: "https://www.youtube.com/watch?v=J6qIzKxmW8Y",
+      link: "https://www.youtube.com/embed/0Zb5fgO0ubE",
       imagen: "https://i.ytimg.com/vi/7C2z4GqqS5E/maxresdefault.jpg",
       categoria: "Back End",
       descripcion: "Este es el video 1"
@@ -68,7 +68,7 @@ function App() {
     {
       id: uuidv4(),
       titulo: "Video 2",
-      link: "https://www.youtube.com/watch?v=0R-fFbA737A",
+      link: "https://www.youtube.com/watch?v=Fms6bXpqF2k&ab_channel=hdeleon.net",
       imagen: "https://i.ytimg.com/vi/7C2z4GqqS5E/maxresdefault.jpg",
       categoria: "Back End",
       descripcion: "Este es el video 2"
@@ -76,7 +76,7 @@ function App() {
     {
       id: uuidv4(),
       titulo: "Video 3",
-      link: "https://www.youtube.com/watch?v=aA2IRoPFIn0",
+      link: "https://www.youtube.com/watch?v=ZTsi1e-VJIU&ab_channel=EDteam",
       imagen: "https://i.ytimg.com/vi/7C2z4GqqS5E/maxresdefault.jpg",
       categoria: "Back End",
       descripcion: "Este es el video 3"
@@ -84,7 +84,7 @@ function App() {
     {
       id: uuidv4(),
       titulo: "Video 4",
-      link: "https://www.youtube.com/watch?v=SjYecEQFL0U",
+      link: "https://www.youtube.com/embed/6sF0Or9fk9Y",
       imagen: "https://i.ytimg.com/vi/7C2z4GqqS5E/maxresdefault.jpg",
       categoria: "inovacion",
       descripcion: "Este es el video 4"
@@ -92,7 +92,7 @@ function App() {
     {
       id: uuidv4(),
       titulo: "Weight of Love",
-      link: "https://www.youtube.com/watch?v=ygdVEIrVnIk",
+      link: "https://www.youtube.com/embed/QypisuCXpk8",
       imagen: "https://i.ytimg.com/vi/7C2z4GqqS5E/maxresdefault.jpg",
       categoria: "Mobile",
       descripcion: "Mi tema favorito de The Black Keys"
