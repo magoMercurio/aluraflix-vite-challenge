@@ -1,12 +1,16 @@
 // eslint-disable-next-line no-unused-vars
 import React from 'react'
 import styled from 'styled-components'
+import heroimg from '../../img/backgroundHero.webp'
+
+const backgroundimg = {
+  backgroundImage: `url(${heroimg})`
+} 
 
 const HeroSection = styled.section`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  background-image: url("../../../public/img/backgroundHero.png");
   width: 100%;
   height: 688px;
   background-repeat: no-repeat;
@@ -76,7 +80,7 @@ const BodyMedium = styled.p`
 const Hero = () => {
   
   return (
-    <HeroSection className="hero" id='frontend'>
+    <HeroSection className="hero" id='frontend' style={backgroundimg} >
       <HeroContainer>
         <ContainerDescription>
           <BtnFrontEnd href="#frontend">Front-End</BtnFrontEnd>
