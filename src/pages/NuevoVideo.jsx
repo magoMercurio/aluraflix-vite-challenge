@@ -43,6 +43,8 @@ const NuevoVideo = ({ categorias, registrarVideo }) => {
     if (validarCodigoSeguridad(codigoSeguridad)) {
       registrarVideo(data)
       console.log(data)
+      refreshPage()
+    
     } else {
       console.log('No hacer nada')
     }
@@ -57,8 +59,12 @@ const NuevoVideo = ({ categorias, registrarVideo }) => {
 
   //Limpiar Boton
   const refreshPage = () => {
-    window.location.reload(true)
-  
+    setTitulo('')
+    setLink('')
+    setLinkImg('')
+    setcategoria('')
+    setDescripcion('')
+    setcodigoSeguridad('')
   }
 
     return (

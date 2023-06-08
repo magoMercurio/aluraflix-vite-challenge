@@ -12,28 +12,7 @@ import NuevaCategoria from './pages/NuevaCategoria';
 
 function App() {
 
-  const [secciones, setSecciones] = useState([
-    {
-      id: uuidv4(),
-      "categoria": "Front End",
-      "descripcion": "Formación Front End de Alura Latam",
-      colorCategoria: '#6bd1ff',      
-    },
-    {
-      id: uuidv4(),
-      "categoria": "Back End",
-      "descripcion": "Formación Back End de Alura Latam",
-      colorCategoria: '#00c86f',      
-    },
-    {
-      id: uuidv4(),
-      "categoria": "Inovacion y Gestión",
-      "descripcion": "Formación Innovación y Gestión de Alura Latam",
-      colorCategoria: '#ff8c2a',      
-    },
-
-  ]);
-
+  
   const [videos, setVideos] = useState([
     {
       id: uuidv4(),
@@ -107,7 +86,7 @@ function App() {
       titulo: "Video 4",
       link: "https://www.youtube.com/watch?v=SjYecEQFL0U",
       imagen: "https://i.ytimg.com/vi/7C2z4GqqS5E/maxresdefault.jpg",
-      categoria: "Back End",
+      categoria: "inovacion",
       descripcion: "Este es el video 4"
     },
     {
@@ -115,7 +94,7 @@ function App() {
       titulo: "Weight of Love",
       link: "https://www.youtube.com/watch?v=ygdVEIrVnIk",
       imagen: "https://i.ytimg.com/vi/7C2z4GqqS5E/maxresdefault.jpg",
-      categoria: "Back End",
+      categoria: "Mobile",
       descripcion: "Mi tema favorito de The Black Keys"
     },
   ]);
@@ -211,8 +190,8 @@ function App() {
                   return <Carrusel
                     datos={categoria}
                     key={categoria.titulo}
-                    secciones={secciones.filter( seccion => seccion.categoria === categoria.titulo )}
-                    videos={videos.filter( video => video.categoria === categoria.titulo )}
+                    videos={videos.filter( (video) => video.categoria === categoria.titulo )}
+                    categorias={categorias}
                   />
                 })
               }
