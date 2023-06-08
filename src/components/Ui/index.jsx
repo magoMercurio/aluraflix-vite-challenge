@@ -74,4 +74,6 @@ export const TitleBig = styled.h2`
   justify-content: center;
   text-align: center;
   padding: 4px 8px;
+  margin-top: 50px;
+  margin-bottom: 30px;
 `

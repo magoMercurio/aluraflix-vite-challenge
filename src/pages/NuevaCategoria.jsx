@@ -4,12 +4,11 @@ import { HeaderHome } from "../components/Header"
 import { Box, TextField, Button } from "@mui/material"
 import styled from 'styled-components'
 import TablaCategoria from '../components/TablaCategorias'
+import { TitleBig  } from '../components/Ui'
 
 
 const TextFieldStyled = styled(TextField)`
-  color: #f5f5f5f5;
   background-color: #53585D;
-
 `
 
 const BtnContainer = styled.div`
@@ -24,48 +23,45 @@ margin-bottom: 30px;
 
 const NuevaCategoria = (props) => {
 
-  const { categorias, registrarCategoria } = props
+  const { categorias, registrarCategoria, actualizarCategorias, eliminarCategoria  } = props
 
   const [titulo, setTitulo] = useState('')
   const [descripcion, setDescripcion] = useState('')
   const [colorCategoria, setColorCategoria] = useState( '#ffffff')
   const [codigoSeguridad, setcodigoSeguridad] = useState('')
+  const [categoriaEdit, setCategoriaEdit] = useState(null);
 
   const enviarForm = (e) => {
     e.preventDefault()
-    const data = {
-      titulo,
-      descripcion,
-      colorCategoria,
-    }
 
-    if (validarCodigoSeguridad(codigoSeguridad)) {
-      registrarCategoria(data)
-      console.log(data)
-      setTitulo('')
-      setDescripcion('')
-      setColorCategoria('#ffffff')
-      
+    if (categoriaEdit === null) {
+      registrarCategoria({
+        titulo,
+        descripcion,
+        colorCategoria
+      })
     } else {
-      console.log('No hacer nada')
-    }
+        const categoriaActualizada = {
+          ...categoriaEdit,
+          titulo,
+          descripcion,
+          colorCategoria
+      
+        }
+        const categoriasActualizadas = categorias.map((categoria) => categoria.id === categoriaEdit.id ? categoriaActualizada: categoria)
+        
+        actualizarCategorias(categoriasActualizadas)
+      }
+      refreshPage()
   }
 
+  const editarCategoria = (categoria) => {
+    setTitulo(categoria.titulo)
+    setDescripcion(categoria.descripcion)
+    setColorCategoria(categoria.colorCategoria)
+    setCategoriaEdit(categoria)
+  }
 
-    /* fetch('http://localhost:3000/api/categorias', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify(data)
-    })
-      .then(res => res.json())
-      .then(data => {
-        console.log(data)
-        refreshPage()
-      })
-      .catch(err => console.log(err)) */
-  
 
   function validarCodigoSeguridad(codigoSeguridad) {
     if (codigoSeguridad.length > 4) {
@@ -80,12 +76,13 @@ const NuevaCategoria = (props) => {
       setDescripcion('')
       setColorCategoria('#ffffff')
       setcodigoSeguridad('')
-    
+      setCategoriaEdit(null)
     }
   
   return (
     <>
       <HeaderHome />
+      <TitleBig>{categoriaEdit  ? 'Editar Categoría' : 'Nueva Categoría'}</TitleBig>
       <Box
         component="form"
         onSubmit={enviarForm}
@@ -165,7 +162,8 @@ const NuevaCategoria = (props) => {
 
           <TablaCategoria
             categorias={categorias}
-            
+            editarCategoria={editarCategoria}
+            eliminarCategoria={eliminarCategoria}
           
           />
 

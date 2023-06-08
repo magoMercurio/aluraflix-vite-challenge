@@ -147,7 +147,7 @@ function App() {
     },
     {
       id: uuidv4(),
-      titulo: "mobile",
+      titulo: "Mobile",
       colorCategoria: "#ffba05",
       descripcion: "Formación Mobile de Alura Latam",
     },
@@ -187,8 +187,14 @@ function App() {
     setCategorias([...categorias, e]);
   }
 
+  //Actualizar categorias
   const actualizarCategorias = (nuevasCategorias) => {
     setCategorias(nuevasCategorias);
+  }
+
+  //Eliminar categorias
+  const eliminarCategoria = (id) => {
+    setCategorias(categorias.filter( categoria => categoria.id !== id ));
   }
 
   return (
@@ -227,7 +233,8 @@ function App() {
               categorias={categorias}
               key={categorias.titulo}
               registrarCategoria={registrarCategoria}
-              actualizarCategorias={actualizarCategorias} 
+              actualizarCategorias={actualizarCategorias}
+              eliminarCategoria={eliminarCategoria}
               />}
             />
       </Routes>
