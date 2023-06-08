@@ -2,6 +2,8 @@
 import React from 'react'
 import styled from 'styled-components'
 import heroimg from '../../img/backgroundHero.webp'
+import ReactPlayer from 'react-player/youtube'
+import { Abtn } from '../Ui'
 
 const backgroundimg = {
   backgroundImage: `url(${heroimg})`
@@ -35,27 +37,13 @@ const ContainerVideo = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  width: 100%;
 `
 
-const BtnFrontEnd = styled.a`
-  box-sizing: border-box;
-  width: 296px;
-  height: 92px;
-  background-color: var(--color-frontend);
-  color: var(--color-gray-light);
-  border: 4px solid #6BD1FF;
-  border-radius: 4px;
-  font-family: var(--font-family);
-  font-style: normal;
-  font-weight: var(--font-weight-400);
-  font-size: var(--font-size-title-big);
-  line-height: 24px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  margin-bottom: 40px;
-  
+const BtnCategoria = styled(Abtn)`
+  background-color: var(--color-primary);
+  border-color: var(--color-primary);
+  margin-bottom: 30px;
 `
 
 const TitleMedium = styled.h2`
@@ -77,20 +65,42 @@ const BodyMedium = styled.p`
   word-wrap: break-word;
 `
 
-const Hero = () => {
-  
+const Hero = (props) => {
+
+  const { videos, categorias } = props
+  const { colorCategoria } = categorias
+
+
+  const ultimoVideo = videos.length > 0 ? videos[videos.length - 1] : null
+
+  const bgc = {
+    background: colorCategoria,
+    border: colorCategoria
+  }
+
   return (
     <HeroSection className="hero" id='frontend' style={backgroundimg} >
       <HeroContainer>
         <ContainerDescription>
-          <BtnFrontEnd href="#frontend">Front-End</BtnFrontEnd>
-          <TitleMedium>Challenge React</TitleMedium>
+          <BtnCategoria style={ bgc } >
+            {ultimoVideo.categoria}
+          </BtnCategoria>
+          <TitleMedium>{ultimoVideo.titulo}</TitleMedium>
           <BodyMedium>
-          Este challenge es una forma de aprendizaje. Es un mecanismo donde podrás comprometerte en la resolución de un problema para poder aplicar todos los conocimientos adquiridos en la formación React.
+          {ultimoVideo.descripcion}
           </BodyMedium>
         </ContainerDescription>
         <ContainerVideo>
-          <h1>aqui va un video</h1>
+          {
+            ultimoVideo && (
+              <ReactPlayer
+                className="video-header"
+                url={ultimoVideo.link}
+                width="60%"
+                controls
+              />
+            )
+          }
         </ContainerVideo>
       </HeroContainer>
     </HeroSection>

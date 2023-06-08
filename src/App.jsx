@@ -91,11 +91,11 @@ function App() {
     },
     {
       id: uuidv4(),
-      titulo: "Weight of Love",
+      titulo: "Flutter y El Desarrollo Móvil Multiplataforma",
       link: "https://www.youtube.com/embed/QypisuCXpk8",
       imagen: "https://i.ytimg.com/vi/7C2z4GqqS5E/maxresdefault.jpg",
       categoria: "Mobile",
-      descripcion: "Mi tema favorito de The Black Keys"
+      descripcion: "Entrevista a un programador de Flutter"
     },
   ]);
 
@@ -184,7 +184,10 @@ function App() {
           path='/' 
           element={
             <>
-              <Home />
+              <Home 
+                videos={videos}
+                categorias={categorias}
+              />
               {
                 categorias.map( (categoria) => {
                   return <Carrusel

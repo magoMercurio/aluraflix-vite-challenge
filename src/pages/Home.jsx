@@ -4,13 +4,16 @@ import Hero from "../components/Hero"
 import { HeaderHome } from "../components/Header"
 
 
-const Home = () => {
-
+const Home = (props) => {
+  const { videos, categorias } = props
   
   return (
     <>
       <HeaderHome />
-      <Hero />
+      <Hero 
+        categorias={categorias}
+        videos={videos} 
+      />
       
     </>
   )

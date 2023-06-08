@@ -52,5 +52,69 @@
       "colorCategoria": "#9cd33b",
       "descripcion": ""
     }
+  ],
+  "videos": [
+    {
+        "id": "uuid1",
+        "titulo": "Video 1",
+        "link": "https://www.youtube.com/watch?v=2-6hEFsXMaU&ab_channel=Programaci%C3%B3nAccesible",
+        "imagen": "https://i.ytimg.com/vi/7C2z4GqqS5E/maxresdefault.jpg",
+        "categoria": "Front End",
+        "descripcion": ""
+    },
+    {
+        "id": "uuid2",
+        "titulo": "Video 2",
+        "link": "https://www.youtube.com/watch?v=H_s-xM6Ii1g",
+        "imagen": "https://i.ytimg.com/vi/7C2z4GqqS5E/maxresdefault.jpg",
+        "categoria": "Front End",
+        "descripcion": ""
+    },
+    {
+        "id": "uuid3",
+        "titulo": "Video 3",
+        "link": "https://www.youtube.com/watch?v=ESShhQmBjjY",
+        "imagen": "https://i.ytimg.com/vi/7C2z4GqqS5E/maxresdefault.jpg",
+        "categoria": "Front End",
+        "descripcion": ""
+    },
+    {
+        "id": "uuid4",
+        "titulo": "Video 4",
+        "link": "https://www.youtube.com/watch?v=tA-_vAz9y78&t=414s&pp=ygUSbmV4dCBqcyBlY29tbWVyY2Ug",
+        "imagen": "https://i.ytimg.com/vi/7C2z4GqqS5E/maxresdefault.jpg",
+        "categoria": "Front End",
+        "descripcion": ""
+    },
+    {
+        "id": "uuid5",
+        "titulo": "Video 5",
+        "link": "https://www.youtube.com/watch?v=QqiDandkcBY",
+        "imagen": "https://i.ytimg.com/vi/7C2z4GqqS5E/maxresdefault.jpg",
+        "categoria": "Front End",
+        "descripcion": "Video para aprender a realizar APIs con prisma y Node.js"
+    },
+    {
+        "id": "uuid6",
+        "titulo": "Video 1",
+        "link": "https://www.youtube.com/embed/0Zb5fgO0ubE",
+        "imagen": "https://i.ytimg.com/vi/7C2z4GqqS5E/maxresdefault.jpg",
+        "categoria": "Back End",
+        "descripcion": "Este es el video 1"
+    },
+    {
+        "id": "uuid7",
+        "titulo": "Video 2",
+        "link": "https://www.youtube.com/watch?v=Fms6bXpqF2k&ab_channel=hdeleon.net",
+        "imagen": "https://i.ytimg.com/vi/7C2z4GqqS5E/maxresdefault.jpg",
+        "categoria": "Back End",
+        "descripcion": "Este es el video 2"
+    },
+    {
+        "id": "uuid8",
+        "titulo": "Video 3",
+        "link": "https://www.youtube.com/watch?v=ZTsi1e-VJIU&ab_channel=EDteam",
+        "imagen": "https://i.ytimg.com/vi/7C2z4GqqS5E/maxresdefault.jpg"
+    }
   ]
 }
